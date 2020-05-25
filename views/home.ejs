@@ -10,7 +10,7 @@
     <div id="main-div">
         <form action="/add-task" method="POST" id="form-container">
             <h5 id="title-heading">TITLE</h5>
-            <input type="text" name="title" id="task-name" placeholder="Your Task Name" required/>
+            <input type="text" name="task_title" id="task-name" placeholder="Your Task Name" required/>
             <h5 id="recent-meet-heading">RECENT MEET</h5>
             <ul id="person-list">
                 <div id="person-div">
@@ -23,18 +23,14 @@
                 </div>
             </ul>
             <h5 id="date-heading">DUE DATE</h5>
-            <input type="date" placeholder="dd/mm/yyyy" name="date" id="task-date" required/>
-            <h5 id="start-time-heading">START TIME</h5>
-            <input type="time" name="task-start-time" id="start_time" placeholder="HH:MM AM/PM" required/>
-            <h5 id="start-time-heading">END TIME</h5>
-            <input type="time" name="task-end-time" id="end_time" placeholder="HH:MM AM/PM" required/>
+            <input type="date" placeholder="dd/mm/yyyy" name="task_date" id="task-date" required/>
             <h5 id="description-heading">DESCRIPTION</h5>
-            <input type="text" name="task-description" id="description" placeholder="Enter Description" required/>
+            <input type="text" name="task_description" id="description" placeholder="Enter Description" required/>
             <h5 id="category-heading">CATEGORY</h5>
             <div id="category-div">
-                <input type="checkbox" name="category" id="task-category1" placeholder="Enter Description" value="GENERAL" checked />
-                <input type="checkbox" name="category" id="task-category2" placeholder="Enter Description" value="HOME" />
-                <input type="checkbox" name="category" id="task-category3" placeholder="Enter Description" value="WORK" />
+                <input type="checkbox" name="task_category" id="task-category1" placeholder="Enter Description" value="GENERAL" checked />
+                <input type="checkbox" name="task_category" id="task-category2" placeholder="Enter Description" value="HOME" />
+                <input type="checkbox" name="task_category" id="task-category3" placeholder="Enter Description" value="WORK" />
             </div>
             <button type="submit" id="add-task-button">ADD TASK</button>
         </form>
