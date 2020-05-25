@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        TASK_LIST
+    </title>
+</head>
+<body>
+    <h1 id="app-heading">Add Task</h1>
+    <div id="main-div">
+        <form action="/add-task" method="POST" id="form-container">
+            <h5 id="title-heading">TITLE</h5>
+            <input type="text" name="title" id="task-name" placeholder="Your Task Name"/>
+            <h5 id="recent-meet-heading">RECENT MEET</h5>
+            <ul id="person-list">
+                <div id="person-div">
+                    <p>persons will be here!</p>
+                </div>
+                <div class="add-person">
+                    <a href="/add-person">
+                        <%/*add icon here */%>
+                    </a>
+                </div>
+            </ul>
+            <h5 id="date-heading">DUE DATE</h5>
+            <input type="date" placeholder="dd/mm/yyyy" name="date" id="task-date"/>
+            <h5 id="start-time-heading">START TIME</h5>
+            <input type="time" name="task-start-time" id="start_time" placeholder="HH:MM AM/PM" />
+            <h5 id="start-time-heading">END TIME</h5>
+            <input type="time" name="task-end-time" id="end_time" placeholder="HH:MM AM/PM" />
+            <h5 id="description-heading">DESCRIPTION</h5>
+            <input type="text" name="task-description" id="description" placeholder="Enter Description" />
+            <h5 id="category-heading">CATEGORY</h5>
+            <div id="category-div">
+                <input type="checkbox" name="category" id="task-category1" placeholder="Enter Description" value="GENERAL" checked />
+                <input type="checkbox" name="category" id="task-category2" placeholder="Enter Description" value="HOME" />
+                <input type="checkbox" name="category" id="task-category3" placeholder="Enter Description" value="WORK" />
+            </div>
+            <button type="submit" id="add-task-button">ADD TASK</button>
+        </form>
+        <a href="/task_list_page" id="view-task-link">
+            VIEW TASK
+        </a>
+    </div>
+    </body>
+</html>
