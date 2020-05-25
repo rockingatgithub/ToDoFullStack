@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const port = 8000;
 
+const db = require('./config/mongoose');
+
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -35,8 +37,8 @@ app.get('/task_list_page', function(req, res){
     });
 })
 
-app.get('/delete_multiple_tasks', function(req, res){
-    
+app.get('/delete_multiple_tasks/:', function(req, res){
+
 })
 
 app.listen(port, function(err){
