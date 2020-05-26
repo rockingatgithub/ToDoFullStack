@@ -72,6 +72,20 @@ app.get('/delete_task', function(req, res){
     });
 });
 
+app.post('/delete-multiple-tasks/', function(req, res){
+    
+    var elearr =req.body.task_item;
+    elearr.forEach(element => {
+        Tasks.findByIdAndDelete(element, function(err){
+            if(err){
+                console.log('error in deleting task');
+                return;
+            }
+        })
+    });
+    return res.redirect('back');
+});
+
 app.listen(port, function(err){
    if(err){ console.log("error in runnng the server");}
     console.log("server is up");

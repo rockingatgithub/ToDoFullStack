@@ -6,11 +6,12 @@
 </head>
 <body>
 <h4>YOUR TASKS</h4>
-<form action="/delete_multiple_tasks/<%%>" method="POST" id="delete-form">
+<form action="/delete-multiple-tasks/" method="POST" id="delete-form">
 
     <div id="task-container">
     <%tasks.forEach(function(task_item){%>
         <p><%= task_item.task_title%></p>
+        <input type="checkbox" name="task_item" value="<%=task_item._id%>" class="task_item" />
         <p><%= task_item.task_description%></p>
         <p><%= task_item.task_date.toString().substring(0,15)%></p>
         <p><% task_item.task_category.forEach(function(task_item2){%> 
