@@ -9,7 +9,15 @@
 <form action="/delete_multiple_tasks/<%%>" method="POST" id="delete-form">
 
     <div id="task-container">
-    
+    <%tasks.forEach(function(task_item){%>
+        <p><%= task_item.task_title%></p>
+        <p><%= task_item.task_description%></p>
+        <p><%= task_item.task_date.toString().substring(0,15)%></p>
+        <p><% task_item.task_category.forEach(function(task_item2){%> 
+                <p><%=task_item2%></p>   
+        <%})%></p>
+        <a href="/delete_task/?id=<%= task_item._id%>">delete it!</a>
+        <%})%>
     
     </div>
     <button type="submit" id="delete-task-button">DELETE SELECTED TASKS</button>

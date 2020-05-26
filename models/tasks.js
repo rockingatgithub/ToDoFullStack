@@ -7,15 +7,15 @@ const taskSchema = new mongoose.Schema({
     },
     task_date : {
         type: Date,
+        default: Date.now,
         required: true
     },
     task_description:{
         type: String,
-        required: false
+        required: true
     },
     task_category:{
-        type: Array,
-        required: false
+        type: Array
     }
 });
 
