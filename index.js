@@ -3,6 +3,7 @@ const path = require('path');
 // const ejsLint = require('ejs-lint');
 const port = 8000;
 
+
 const db = require('./config/mongoose');
 const Tasks = require('./models/tasks');
 
@@ -10,6 +11,8 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+// app.use('/', require('./routes'));
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('assets'));
@@ -75,14 +78,17 @@ app.get('/delete_task', function(req, res){
 app.post('/delete-multiple-tasks/', function(req, res){
     
     var elearr =req.body.task_item;
-    elearr.forEach(element => {
-        Tasks.findByIdAndDelete(element, function(err){
-            if(err){
-                console.log('error in deleting task');
-                return;
-            }
-        })
-    });
+    if(elearr)   //check is there is a task or not..
+    {
+        elearr.forEach(element => {
+            Tasks.findByIdAndDelete(element, function(err){
+                if(err){
+                    console.log('error in deleting task');
+                    return;
+                }
+            })
+        });
+    }
     return res.redirect('back');
 });
 
